@@ -4,14 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 4</title>
+    <style>
+        form {
+            display: grid;
+            gap: 8px;
+            width: fit-content;
+            margin: auto;
+        }
+
+        form div {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <script>
+        function onSubmit(e) {
+            console.log(e);
+            alert('Submitted!');
+            e.preventDefault();
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <form action="">
+        <form onsubmit="onSubmit(event)">
+            <h1>Мы зарегистрируем вас по полной!</h1>
+
             <div>
                 <label for="name">ФИО</label>
-                <input id="name" type="text" placeholder="ФИО" value="">
+                <input id="name" required type="text" placeholder="ФИО" value="">
             </div>
+
+            <div>
+                <label for="email">Электронная почта</label>
+                <input id="email" type="email" placeholder="example@mail.com" value="">
+            </div>
+            
+            <div>
+                <label for="tel">Телефон</label>
+                <input id="tel" type="tel" placeholder="+7 (777) 777 77-77" value="">
+            </div>
+            
+            <div>
+                <label for="number" readonly>Возраст</label>
+                <input id="number" type="number" placeholder="21" value="">
+            </div>
+            
+            <div>
+                <label for="password">Пароль</label>
+                <input id="password" type="password" placeholder="*****" value="">
+            </div>
+            
+            <div>
+                <label for="file">Фото</label>
+                <input id="file" type="file">
+            </div>
+            
+            <div>
+                <label for="date">Дата рождения</label>
+                <input id="date" type="date">
+            </div>
+            
+            <div>
+                <label for="color">Цвет глаз</label>
+                <input id="color" type="color">
+            </div>
+            
+            <div>
+                <label for="checkbox">Вы русский?</label>
+                <input id="checkbox" type="checkbox" checked disabled>
+            </div>            
+            <div>
+                <label for="radio1">Мужской</label>
+                <input id="radio1" name="radio" type="radio" value="Мужской">
+                <label for="radio2">Женский</label>
+                <input id="radio2" name="radio" type="radio" value="Женский">
+                <label for="radio3">Другой</label>
+                <input id="radio3" name="radio" type="radio" value="Другой">
+            </div>
+
+            <label for="textarea">Расскажите о себе все!</label>
+            <textarea id="textarea"></textarea>
+
+            <!-- его тут не должно быть но он тут есть -->
+            <input hidden type="text">
 
             <!-- по умолчанию type="submit" -->
             <button>Отправить</button>
