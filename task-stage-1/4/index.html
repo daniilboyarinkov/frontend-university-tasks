@@ -46,7 +46,7 @@
             </div>
             
             <div>
-                <label for="number" readonly>Возраст</label>
+                <label for="number">Возраст</label>
                 <input id="number" type="number" placeholder="21" value="">
             </div>
             
@@ -71,8 +71,12 @@
             </div>
             
             <div>
-                <label for="checkbox">Вы русский?</label>
-                <input id="checkbox" type="checkbox" checked disabled>
+                <label for="checkbox1">Преподаватель</label>
+                <input id="checkbox1" name="checkbox" type="checkbox">
+                <label for="checkbox2">Студент</label>
+                <input id="checkbox2" name="checkbox" type="checkbox">
+                <label for="checkbox3">Человек</label>
+                <input id="checkbox3" name="checkbox" type="checkbox">
             </div>            
             <div>
                 <label for="radio1">Мужской</label>
@@ -87,7 +91,29 @@
             <textarea id="textarea"></textarea>
 
             <!-- его тут не должно быть но он тут есть -->
-            <input hidden type="text">
+            <input type="hidden">
+
+            <label for="pet-select">Выбери животное:</label>
+
+            <select name="pets" id="pet-select">
+                <option value="dog">Собака</option>
+                <option value="cat">Кот</option>
+                <option value="hamster">Хомяк</option>
+                <option value="parrot">Попугай</option>
+                <option value="spider">Паук</option>
+                <option value="goldfish">Рыбка</option>
+            </select>
+
+            <label for="pet-select">Выбери много животных:</label>
+
+            <select name="pets" id="pet-select-multiple" multiple>
+                <option value="dog">Собака</option>
+                <option value="cat">Кот</option>
+                <option value="hamster">Хомяк</option>
+                <option value="parrot">Попугай</option>
+                <option value="spider">Паук</option>
+                <option value="goldfish">Рыбка</option>
+            </select>
 
             <!-- по умолчанию type="submit" -->
             <button>Отправить</button>
