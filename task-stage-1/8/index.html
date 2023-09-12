@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 8</title>
     <style>
+        /** task 1 **/
+        a[href^=https] {
+            color: red;
+        }
         .container{
             width: 900px;
             margin: 0 auto;
@@ -16,11 +20,18 @@
         #ddd .bcde span{
             color: green;
         }
-        .list span{
-            color: blue;
+        /** task 2 **/
+        /** перекрываем большую специфичность ещё большей специфичностью без !important **/
+        #ddd ul.list > li > span {
+            color: blue; 
         }
-        .user-content h2{
+        /** task 4 **/
+        .user-content > h2{
             color: coral;
+        }
+        /** task 3 **/
+        .ordered-list > li + li {
+            margin-top: 12px;
         }
     </style>
 </head>
