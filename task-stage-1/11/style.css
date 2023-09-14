@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+body {
+  font-family: 'Advent Pro', sans-serif;
+}
+
 th,
 h1,
 h2,
@@ -26,6 +30,32 @@ img {
   height: auto;
 }
 
+.styled-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.heading-1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2; 
+  letter-spacing: 2px;
+  text-align: center;
+  border: 1px solid #333;
+  padding: 10px; 
+}
+
+.heading-2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: blue;
+}
+
+.heading-3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: green;
+}
 
 .truncate{
     overflow: hidden;
@@ -47,4 +77,14 @@ img {
 table{
     width: 100%;
     border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.words {
+  word-wrap: break-word;
 }
