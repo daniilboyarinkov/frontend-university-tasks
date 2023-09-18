@@ -9,10 +9,48 @@
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            grid-template-areas:
+                "header header header header header header header header header"
+                "sidebar sidebar sidebar main main main main main main"
+                "sidebar sidebar sidebar footer footer footer footer footer footer";
+        }
+        .container > header,
+        .container > sidebar,
+        .container > main,
+        .container > footer  {
+            border: 1px solid #ccc;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .header {
+            grid-area: header;
+        }
+        .sidebar {
+            grid-area: sidebar;
+        }
+        .content {
+            grid-area: main;
+            padding: 20px 60px;
+            text-align: justify;
+        }
+        .footer {
+            grid-area: footer;
         }
     </style>
 </head>
 <body class="container">
-
+    <header class="header">Header</header>
+    <sidebar class="sidebar">Sidebar</sidebar>
+    <main class="content">
+        <h1>Content</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error odit possimus ad provident cumque asperiores officiis! Dolorum fugit, aliquam dolorem sed optio rem tempore error magnam dolor non ad dicta vel quidem autem? Exercitationem iste, aspernatur atque iure ipsum alias repellat earum voluptatum ipsa tenetur beatae minima, fugiat sit explicabo quas sequi ut odio unde. Consequatur tempore facilis quae, cupiditate omnis ipsum reprehenderit sequi aperiam quos natus repellat quo corrupti nisi maxime veritatis laudantium totam. Libero, ab quam aspernatur necessitatibus natus inventore atque provident odio officiis laudantium, qui ratione. Exercitationem cum architecto corrupti enim mollitia accusantium rem expedita nihil aspernatur nostrum. Nihil sit distinctio quaerat sed repudiandae eius, reiciendis ad magnam rem quia dolor ipsa adipisci vitae, impedit ea? Odit veritatis ut sunt sequi obcaecati accusamus magnam possimus aliquid corrupti sapiente inventore quisquam, numquam, esse perferendis culpa at quae eum? Necessitatibus suscipit culpa consectetur soluta unde magni corporis repellat consequuntur veniam dolore! Molestiae tempore pariatur recusandae necessitatibus illum reprehenderit rerum autem mollitia, laborum esse! Quisquam error nulla dolor atque earum. Expedita, veniam. Velit facere accusamus vitae deserunt, repudiandae, non pariatur ea quasi obcaecati at omnis similique veniam! Nobis provident at iste possimus recusandae voluptatem minus tempora magni, fuga dolores voluptates impedit ipsa, dignissimos labore voluptatibus? Similique reprehenderit atque beatae officia, voluptas, eveniet deserunt sit ex, quod eos libero at molestiae voluptatum! Voluptatem suscipit, doloribus a officiis reprehenderit beatae necessitatibus quis velit quos aperiam amet. Temporibus repudiandae repellat, quidem, rem similique illo earum mollitia nemo, est nam modi. Obcaecati non, quis dolorum accusamus animi ex numquam aspernatur fugit ut nobis error provident vero illo ipsum. Atque labore consequuntur quos nihil! Cum vero provident id distinctio error quae, libero inventore. Architecto voluptate possimus quos maxime inventore iusto nisi sint reiciendis hic? Ducimus quaerat repellendus odio nam accusantium velit rerum dolorem consectetur officiis.
+        </p>
+    </main>
+    <footer class="footer">Footer</footer>
 </body>
 </html>
