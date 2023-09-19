@@ -6,6 +6,7 @@
     <title>Задание 17</title>
     <style>
         body{
+            padding-top: 56px;
             font-family: sans-serif;
         }
 
@@ -25,18 +26,25 @@
         }
 
         .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             text-align: center;
             background-color: cadetblue;
             padding: 10px;
+            z-index: 100;
         }
 
-
         .chars-block p{
+            text-transform: capitalize;
             font-size: 20px;
             margin-bottom: 100px;
         }
 
         .chars-block__header{
+            position: sticky;
+            top: 56px;
             padding: 10px;
             background-color: aquamarine;
         }
