@@ -29,6 +29,7 @@
         }
 
         .banner{
+            position: relative;
             border: 1px solid red;
             padding: 20px;
         }
@@ -40,10 +41,16 @@
         }
 
         .banner__content{
-
+            max-width: 600px;
+            background-color: black;
+            color: white;
+            padding: 20px 10px;
         }
         .banner__media{
-
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
         }
     </style>
 </head>
