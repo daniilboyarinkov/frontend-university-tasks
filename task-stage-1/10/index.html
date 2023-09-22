@@ -8,56 +8,54 @@
 </head>
 <body class="page">
 
-    <div class="header">
-        <div class="container">
-            <div class="nav">
+    <header class="page__header">
+        <div class="container header__container">
+            <nav class="header__nav">
                 <a href="#"><img class="logo" src="logo.jpg" alt=""></a>
-                <div class="menu">
-                    <div><a href="#">Главная</a></div>
-                    <div><a href="#">О нас</a></div>
-                    <div><a href="#">Товары</a></div>
-                    <div><a href="#">Контакты</a></div>
-                </div>
-            </div>
+                <ul class="menu">
+                    <li class="menu__item"><a class="menu__link" href="#">Главная</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">О нас</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Товары</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-    <div class="page__spacing container">
+    </header>
+
+    <main class="page__main container">
         <h1 class="main-header">Магазин</h1>
-    </div>
+    </main>
 
-    <div class="container">
-
-        <div class="page__spacing area">
-            <div class="second-header">
-                <h2>Товары</h2>
-            </div>
-            <div class="products">
-                <div class="product products_big">
-                    <h3>Товар 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, consequatur voluptate architecto laborum vel ab alias excepturi tempore soluta, ex commodi, eius molestias reiciendis neque omnis eaque magni facilis recusandae!</p>
-                </div>
-                <div class="product">
-                    <h3>Товар 2</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, consequatur voluptate architecto laborum vel ab alias excepturi tempore soluta, ex commodi, eius molestias reiciendis neque omnis eaque magni facilis recusandae!</p>
-                </div>
-                <div class="product">
-                    <h3>Реклама</h3>
-                    <img width="264" height="264" src="https://place-hold.it/150x150?text=ADS" alt="">
-                </div>
-                <div class="product">
-                    <h3>Товар 4</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, consequatur voluptate architecto laborum vel ab alias excepturi tempore soluta, ex commodi, eius molestias reiciendis neque omnis eaque magni facilis recusandae!</p>
-                </div>
-            </div>
+    <section class="page__section area">
+        <header class="section__header second-header">
+            <h2>Товары</h2>
+        </header>
+        <div class="section__content products">
+            <article class="product product_big">
+                <h3 class="product__title">Товар 1</h3>
+                <p class="product__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, consequatur voluptate architecto laborum vel ab alias excepturi tempore soluta, ex commodi, eius molestias reiciendis neque omnis eaque magni facilis recusandae!</p>
+            </article>
+            <article class="product">
+                <h3 class="product__title">Товар 2</h3>
+                <p class="product__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, consequatur voluptate architecto laborum vel ab alias excepturi tempore soluta, ex commodi, eius molestias reiciendis neque omnis eaque magni facilis recusandae!</p>
+            </article>
+            <article class="product">
+                <h3 class="product__title">Реклама</h3>
+                <img width="264" height="264" src="https://place-hold.it/150x150?text=ADS" alt="">
+            </article>
+            <article class="product">
+                <h3 class="product__title">Товар 4</h3>
+                <p class="product__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, consequatur voluptate architecto laborum vel ab alias excepturi tempore soluta, ex commodi, eius molestias reiciendis neque omnis eaque magni facilis recusandae!</p>
+            </article>
         </div>
 
-    </div>
+    </section>
 
-    <div class="page__spacing footer">
-        <div class="container">
-            <p>THIS FOOTER</p>
+    <footer class="page__footer">
+        <div class="container footer__container">
+            <p class="footer__item">THIS FOOTER</p>
         </div>
-    </div>
+    </footer>
 
 </body>
 </html>
