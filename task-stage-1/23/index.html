@@ -7,15 +7,44 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-    .task-list {
+.task-list {
+  counter-reset: task-counter;
+}
 
-    }
+.task-list__item {
+  position: relative;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
 
-    .task-list__item {
-        margin-bottom: 10px;
-        padding: 20px;
-    }
+.task-list__item:nth-child(odd) {
+  background-color: #e6e6e6;
+}
 
+.task-list__item::before {
+  counter-increment: task-counter;
+  content: counter(task-counter);
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.list-mark__item {
+    display: flex;
+    align-items: center;
+    padding: 4px 16px;
+}
+.list-mark__item::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: no-repeat center url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.663 3.773A9 9 0 1021 12v-.92a1 1 0 112 0V12A11.002 11.002 0 018.188 22.313a11 11 0 118.289-20.366 1 1 0 11-.814 1.827z' fill='%23f8c300'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22.707 3.293a1 1 0 010 1.414l-10 10.01a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L12 12.595l9.293-9.302a1 1 0 011.414 0z' fill='%23f8c300'/%3E%3C/svg%3E");
+  background-size: contain;
+  margin-right: 10px;
+}
     </style>
 
 </head>
@@ -24,10 +53,10 @@
 
     <div class="container">
         <ol class="task-list">
-            <li class="task-list__item">Список дел 1</li>
-            <li class="task-list__item">Список дел 2</li>
-            <li class="task-list__item">Список дел 3</li>
-            <li class="task-list__item">Список дел 4</li>
+            <li class="task-list__item">Задача 1</li>
+            <li class="task-list__item">Задача 2</li>
+            <li class="task-list__item">Задача 3</li>
+            <li class="task-list__item">Задача 4</li>
         </ol>
     </div>
 
