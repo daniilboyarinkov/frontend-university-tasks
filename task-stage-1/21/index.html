@@ -5,23 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 21</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+.menu {
+    background-color: #333;
+    color: #fff;
+    padding: 25px 10px;
+}
+
+.menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__item {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu__link:hover {
+    color: gray;
+}
+
+.menu__sublist {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    padding: 10px 15px;
+    left: 0;
+    top: 100%;
+}
+
+.menu__item--dropdown:hover .menu__sublist {
+    display: block;
+}
+
+.menu__subitem {
+    margin: 0;
+    padding: 5px 2px;
+}
+
+.menu__subitem:hover {
+    background-color: #555;
+}
+    </style>
 </head>
 <body>
-    <div class="container">
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Товары</a></li>
-            <li>
-                <a href="#">Категории</a>
-                <ul>
-                    <li>Категория 1</li>
-                    <li>Категория 2</li>
-                    <li>Категория 3</li>
-                    <li>Категория 4</li>
+    <div class="menu">
+        <ul class="menu__list">
+            <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Новости</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Товары</a></li>
+            <li class="menu__item menu__item--dropdown">
+                <a href="#" class="menu__link">Категории</a>
+                <ul class="menu__sublist">
+                    <li class="menu__subitem">Категория 1</li>
+                    <li class="menu__subitem">Категория 2</li>
+                    <li class="menu__subitem">Категория 3</li>
+                    <li class="menu__subitem">Категория 4</li>
                 </ul>
             </li>
-            <li><a href="#">Контакты</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
         </ul>
     </div>
 </body>
