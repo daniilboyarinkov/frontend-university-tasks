@@ -9,11 +9,14 @@
     <script>
         const text = prompt('Введите текст');
         const word = prompt('Введите слово из текста');
-        // const index = '';
+        const index = text.indexOf(word);
 
-        const result = ''
-
-        alert(result);
+        if (index !== -1) {
+            const result = text.substring(0, index + word.length);
+            console.log(result);
+        } else {
+            console.log('Слово не найдено в тексте.');
+        }
     </script>
 </body>
 </html>
