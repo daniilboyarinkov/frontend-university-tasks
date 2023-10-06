@@ -7,6 +7,9 @@
 </head>
 <body>
     <script>
+        Object.prototype.toString = function() {return `У студента ${this.name} `}
+        Object.prototype.valueOf = function() {return `в кошельке: ${this.money} рублей`}
+
         const object1 = {
             name: 'Student1',
             money: 100,
@@ -22,10 +25,12 @@
             money: 300,
         }
 
-        const divider = () => ({})
+        const divider = () => {}
+        divider.valueOf = () => ' | '
 
         const result = (`${object1}` + object1) + divider + (`${object2}` + object2) + divider + (`${object3}` + object3)
         console.log(result)
+        // У студента Student1 в кошельке:100 рублей | У студента Student2 в кошельке:200 рублей | У студента Student3 в кошельке:300 рублей
     </script>
 </body>
 </html>
