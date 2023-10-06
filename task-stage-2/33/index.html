@@ -9,6 +9,30 @@
     <script>
         const age = 10
         console.log('age: ', Number(age), Boolean(age), String(age));
+
+        const Undefined = undefined;
+        const Null = null;
+        const BooleanValue = true;
+        const NumberValue = 42;
+        const BigIntValue = 1234567890123456789012345678901234567890n;
+        const SymbolValue = Symbol('mySymbol');
+        const StringValue = 'Hello, World!';
+        const objectValue = { name: 'Alex' };
+        const arrayValue = [1, 2, 3];
+        const fn = function () {};
+        const dateValue = new Date();
+
+        console.log('Undefined: ', Number(Undefined), Boolean(Undefined), String(Undefined));
+        console.log('Null: ', Number(Null), Boolean(Null), String(Null));
+        console.log('BooleanValue: ', Number(BooleanValue), Boolean(BooleanValue), String(BooleanValue));
+        console.log('NumberValue: ', Number(NumberValue), Boolean(NumberValue), String(NumberValue));
+        console.log('BigIntValue: ', Number(BigIntValue), String(BigIntValue));
+        console.log('SymbolValue: ', String(SymbolValue));
+        console.log('StringValue: ', Number(StringValue), Boolean(StringValue), String(StringValue));
+        console.log('objectValue: ', Number(objectValue), Boolean(objectValue), String(objectValue));
+        console.log('arrayValue: ', Number(arrayValue), Boolean(arrayValue), String(arrayValue));
+        console.log('fn: ', Number(fn), Boolean(fn), String(fn));
+        console.log('dateValue: ', Number(dateValue), Boolean(dateValue), String(dateValue));
     </script>
 </body>
 </html>
