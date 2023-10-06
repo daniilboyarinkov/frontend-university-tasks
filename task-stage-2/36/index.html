@@ -8,7 +8,38 @@
 <body>
     <script>
         const baseNumber = 10;
-        // const arrayNumber =
+        const array = Array.from({ length: baseNumber }, (_, index) => index + 1);
+        {
+            // Решение с использованием цикла for
+            let sumFor = 0;
+            for (let i = 0; i < array.length; i++) {
+                sumFor += array[i] ** 2;
+            }
+            console.log("Сумма (цикл for):", sumFor);
+        }
+        {
+            // Решение с использованием цикла for...of
+            let sumForOf = 0;
+            for (const item of array) {
+                sumForOf += item ** 2;
+            }
+            console.log("Сумма (цикл for...of):", sumForOf);
+        }
+        {
+            // Решение с использованием метода forEach
+            let sumForEach = 0;
+            array.forEach((item) => {
+                sumForEach += item ** 2;
+            });
+            console.log("Сумма (метод forEach):", sumForEach);
+        }
+        {
+            // Решение с использованием метода reduce
+            const sumReduce = array.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue ** 2;
+            }, 0);
+            console.log("Сумма (метод reduce):", sumReduce);
+        }
     </script>
 </body>
 </html>
