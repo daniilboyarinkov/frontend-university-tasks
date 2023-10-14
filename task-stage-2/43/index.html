@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 43</title>
 </head>
+
 <body>
     <script>
         const listUsers = [
@@ -33,16 +35,23 @@
                 birthday: '2000-10-15',
                 isAdult: true,
             },
-        ]
+        ];
 
-        const filterList = '....';
-        const transformList = '....';
-        const sortedList = '....';
+        const filteredList = listUsers.filter(user => user.isAdult);
 
-        console.log(filterList)
-        console.log(transformList)
-        console.log(sortedList)
+        const transformedList = filteredList.map(user => {
+            const date = new Date(user.birthday);
+            const formattedDate = date.toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            return { ...user, birthday: formattedDate };
+        });
+
+        const sortedList = [...transformedList].sort((a, b) => a.firstName.localeCompare(b.firstName));
+
+        console.log(filteredList);
+        console.log(transformedList);
+        console.log(sortedList);
 
     </script>
 </body>
+
 </html>
