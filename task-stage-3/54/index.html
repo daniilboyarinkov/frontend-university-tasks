@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 54</title>
     <style>
-        .container{
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 24px;
@@ -18,12 +20,14 @@
             cursor: pointer;
             color: white;
         }
-        .grid{
+
+        .grid {
             display: flex;
             gap: 6px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="grid">
@@ -34,7 +38,28 @@
     </div>
 
     <script>
+        function handleClick() {
+            alert('CLICK!');
+        }
 
+        function setClickEvent() {
+            document.querySelector('.js-button-click').addEventListener('click', handleClick);
+        }
+
+        function removeClickEvent() {
+            document.querySelector('.js-button-click').removeEventListener('click', handleClick);
+        }
+
+        document.querySelector('.js-button-add').addEventListener('click', function () {
+            setClickEvent();
+            alert('Событие клика установлено на кнопку js-button-click');
+        });
+
+        document.querySelector('.js-button-remove').addEventListener('click', function () {
+            removeClickEvent();
+            alert('Событие клика удалено с кнопки js-button-click');
+        });
     </script>
 </body>
+
 </html>
