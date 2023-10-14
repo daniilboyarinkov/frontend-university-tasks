@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 67</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .page__list{
+
+        .page__list {
             margin-top: 20px;
         }
-        .list{
+
+        .list {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
-        .list__message{
+
+        .list__message {
             padding: 5px;
         }
-        .list--send{
+
+        .list--send {
             background: #8BC34A;
         }
-        .list--receive{
+
+        .list--receive {
             background: #e4e4e4;
         }
-
-
     </style>
 </head>
+
 <body class="page">
     <div class="container">
         <div class="send-message">
@@ -59,12 +68,21 @@
         const url = "wss://socketsbay.com/wss/v2/1/demo/";
         const websocket = new WebSocket(url);
 
-        const sendMessage = (text) => {
+        const sendMessage = (text, isSent) => {
+            const messageDiv = document.createElement('div');
+            const className = isSent ? 'list--send' : 'list--receive';
+            messageDiv.className = 'list__message ' + className;
 
+            const date = new Date().toLocaleString();
+            messageDiv.textContent = isSent
+                ? `Отправлено: ${text} (${date})`
+                : `Получено: ${text} (${date})`;
+
+            list.prepend(messageDiv);
         }
 
         websocket.onmessage = (event) => {
-            console.log(event)
+            sendMessage(event.data, false);
         };
 
         websocket.onopen = (event) => {
@@ -78,9 +96,15 @@
         };
 
         button.addEventListener('click', () => {
-
+            const message = input.value;
+            if (message) {
+                sendMessage(message, true);
+                websocket.send(message);
+                input.value = '';
+            }
         })
 
     </script>
 </body>
+
 </html>
