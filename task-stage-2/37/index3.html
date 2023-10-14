@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 37.3</title>
 </head>
+
 <body>
     <script>
-        function statsArray() {
+        function statsArray(...args) {
+            const maxElement = Math.max(...args);
+            const minElement = Math.min(...args);
 
+            console.log(`Длина: ${args.length}`);
+            console.log(`Максимальный элемент: ${maxElement}`);
+            console.log(`Минимальный элемент: ${minElement}`);
         }
+
+        statsArray(1, 10, 2, 5);
     </script>
 </body>
+
 </html>

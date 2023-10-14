@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 37.1</title>
 </head>
+
 <body>
     <script>
+        // Function Declaration (Normal):
+        function greetingDeclaration(name) {
+            return `Привет ${name}!`;
+        }
 
+        // Function Expression (Normal):
+        const greetingExpression = function (name) {
+            return `Привет ${name}!`;
+        };
+
+        // Function Expression (Arrow - Вариация 1):
+        const greetingArrow1 = (name) => {
+            return `Привет ${name}!`;
+        };
+
+        // Function Expression (Arrow - Вариация 2):
+        const greetingArrow2 = name => `Привет ${name}!`;
+
+        console.log(greetingDeclaration('Alex'));
+        console.log(greetingExpression('Alex'));
+        console.log(greetingArrow1('Alex'));
+        console.log(greetingArrow2('Alex'));
     </script>
 </body>
+
 </html>

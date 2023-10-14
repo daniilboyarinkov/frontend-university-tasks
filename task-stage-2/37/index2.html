@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 37.2</title>
 </head>
+
 <body>
     <script>
-        function season() {
+        function season(month) {
+            // более красивый вариант :)
+            // const seasons = ["зима", "весна", "лето", "осень"];
+            // if (month < 1 || month > 12) {
+            //     return "Неверный номер месяца";
+            // }
+            // return seasons[Math.floor((month % 12) / 3)];
 
+            if (month >= 1 && month <= 2 || month === 12) {
+                return "зима";
+            } else if (month >= 3 && month <= 5) {
+                return "весна";
+            } else if (month >= 6 && month <= 8) {
+                return "лето";
+            } else if (month >= 9 && month <= 11) {
+                return "осень";
+            }
+            return "Неверный номер месяца";
         }
+
+        const monthNumber = 8;
+        const result = season(monthNumber);
+        console.log(`Месяц ${monthNumber} соответствует времени года: ${result}`);
     </script>
 </body>
+
 </html>
