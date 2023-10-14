@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 48</title>
     <style>
-        .container{
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-
     </style>
 </head>
+
 <body>
     <div class="container">
         <ul>
@@ -37,7 +38,16 @@
     </div>
 
     <script>
+        const first = document.querySelector('.container ul:first-child li:first-child');
+        const list = Array.from(document.querySelectorAll('.container ul li:first-child'));
+
+        console.dir(first);
+
+        list.forEach(item => {
+            console.log(item);
+        });
 
     </script>
 </body>
+
 </html>
