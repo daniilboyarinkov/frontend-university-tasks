@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 38.1</title>
 </head>
+
 <body>
     <script>
         function sum(value, type = 'odd') {
+            if (typeof value !== 'number') {
+                return NaN;
+            }
 
+            // and another one :)
+            // return Array.from({ length: value }, (_, i) => i + 1)
+            //      .filter(num => (type === 'odd' && num % 2 !== 0) || (type === 'even' && num % 2 === 0))
+            //      .reduce((acc, num) => acc + num, 0);
+
+            let total = 0;
+            for (let i = 1; i <= value; i++) {
+                const isEven = i % 2 === 0;
+
+                if (type === 'odd' && !isEven) {
+                    total += i;
+                } else if (type === 'even' && isEven) {
+                    total += i;
+                }
+            }
+
+            return total;
         }
+
+        const result1 = sum(6);
+        console.log(result1);
+
+        const result2 = sum(6, 'even');
+        console.log(result2);
     </script>
 </body>
+
 </html>

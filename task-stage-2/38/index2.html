@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 38.2</title>
 </head>
+
 <body>
     <script>
         const add = (x, y) => x + y;
@@ -12,13 +14,16 @@
         const multiply = (x, y) => x * y;
         const divide = (x, y) => x / y;
 
-        const calculate = () => {
-
+        const calculate = (number1, number2, operation) => {
+            return operation(number1, number2);
         }
 
         const resultAdd = calculate(1, 2, add);
-        // .....
+        const resultSubtract = calculate(10, 5, subtract);
 
+        console.log(resultAdd); // 3
+        console.log(resultSubtract); // 5
     </script>
 </body>
+
 </html>
