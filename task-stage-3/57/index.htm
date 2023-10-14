@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 57</title>
     <style>
-        body{
+        body {
             font-size: 20px;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .tasks li{
+
+        .tasks li {
             padding: 10px 3px;
             cursor: pointer;
             background-color: transparent;
             transition: background-color 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
         }
-        .tasks li:hover{
+
+        .tasks li:hover {
             background-color: #e4e4e4;
         }
-        .complete{
+
+        .complete {
             text-decoration: line-through;
             color: #03A9F4;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <ul class="tasks">
@@ -42,7 +48,14 @@
     </div>
 
     <script>
+        const ul = document.querySelector('.tasks');
 
+        ul.addEventListener('click', function (event) {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('complete');
+            }
+        });
     </script>
 </body>
+
 </html>
