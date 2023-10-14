@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 50</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
 
-        .form{
+        .form {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
-        .form__cell{
+
+        .form__cell {
             display: flex;
             flex-direction: column;
         }
-        .form__label{
+
+        .form__label {
             margin-bottom: 6px;
         }
 
-        .label{
+        .label {
             font-weight: bold;
             font-size: 14px;
             color: #777777;
             cursor: default;
         }
 
-        .input{
+        .input {
             font-size: 16px;
             height: 40px;
             padding: 6px 12px;
@@ -50,6 +57,7 @@
             background-color: #fff;
             width: 100%;
         }
+
         .input:focus {
             color: #495057;
             border-color: #bc7f27;
@@ -57,12 +65,13 @@
             box-shadow: 0 0 0 0.2rem rgb(210 100 17 / 25%);
         }
 
-        .form__footer{
+        .form__footer {
             display: flex;
             justify-content: flex-end;
             gap: 6px;
         }
-        .button{
+
+        .button {
             display: inline-flex;
             cursor: pointer;
             font-weight: 400;
@@ -78,7 +87,7 @@
             font-size: 1rem;
             line-height: 1.5;
             border-radius: 0.25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
         }
 
         .button--primary {
@@ -91,10 +100,9 @@
             background-color: #0069d9;
             border-color: #0062cc;
         }
-
-
     </style>
 </head>
+
 <body>
     <div class="container">
         <form action="" class="form">
@@ -105,7 +113,7 @@
 
             <!-- <div class="form__cell">
                 <label for="email" class="label form__label">Email</label>
-                <input id="email" value="text@gm.com"  class="input" type="text" placeholder="Email">
+                <input id="email" value="text@gm.com" class="input" type="text" placeholder="Email">
             </div> -->
 
             <div class="form__footer">
@@ -114,7 +122,31 @@
         </form>
     </div>
     <script>
+        const newFormCell = document.createElement("div");
+        newFormCell.className = "form__cell";
+
+        const newLabel = document.createElement("label");
+        newLabel.htmlFor = "newInput";
+        newLabel.className = "label form__label";
+        newLabel.innerText = "Новая ячейка";
+
+        const newInput = document.createElement("input");
+        newInput.id = "newInput";
+        newInput.required = true;
+        newInput.className = "input";
+        newInput.type = "text";
+        newInput.placeholder = "Новая ячейка";
+
+        const randomText = "Рандомный текст " + Math.random();
+        newInput.value = randomText;
+
+        newFormCell.appendChild(newLabel);
+        newFormCell.appendChild(newInput);
+
+        const form = document.querySelector(".form");
+        form.appendChild(newFormCell);
 
     </script>
 </body>
+
 </html>
