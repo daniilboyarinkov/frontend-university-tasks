@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 61</title>
     <link rel="stylesheet" href="form.css">
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
 
-        .grid{
+        .grid {
             display: flex;
             gap: 20px;
         }
     </style>
 </head>
+
 <body class="container">
     <div class="grid">
         <input class="input js-input" type="text">
@@ -42,8 +48,32 @@
         const input = document.querySelector('.js-input')
         const select = document.querySelector('.js-select')
 
+        // Задача 1
+        // input.addEventListener('change', function () {
+        //     params.set('text', input.value);
+        //     location.hash = params.toString();
+        // });
 
+        // select.addEventListener('change', function () {
+        //     params.set('car_id', select.value);
+        //     location.hash = params.toString();
+        // });
 
+        // Задача 2
+        input.addEventListener('change', function () {
+            params.set('text', input.value);
+            history.replaceState(null, null, '?' + params.toString());
+        });
+
+        select.addEventListener('change', function () {
+            params.set('car_id', select.value);
+            history.replaceState(null, null, '?' + params.toString());
+        });
+
+        // Заполнение значений из адресной строки
+        input.value = params.get('text') || '';
+        select.value = params.get('car_id') || '';
     </script>
 </body>
+
 </html>
