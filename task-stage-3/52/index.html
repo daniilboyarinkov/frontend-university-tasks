@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 52</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
         }
-        .container{
+
+        .container {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 24px;
@@ -23,40 +26,46 @@
             margin-bottom: 2rem;
         }
 
-        .items{
+        .items {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
         }
-        .item{
+
+        .item {
             display: flex;
             flex-direction: column;
             border: 1px solid black;
         }
-        .item__name{
+
+        .item__name {
             margin-bottom: 10px;
             font-size: 18px;
         }
-        .item__content{
+
+        .item__content {
             margin-bottom: 10px;
             font-size: 14px;
         }
-        .item__footer{
+
+        .item__footer {
             background-color: black;
             color: white;
             padding: 5px;
             text-align: center;
         }
-        .item__bg{
+
+        .item__bg {
             height: 150px;
             background-color: black;
         }
-        .item__body{
+
+        .item__body {
             padding: 10px;
         }
-
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -76,7 +85,7 @@
     </div>
 
     <script>
-
+        const itemsContainer = document.querySelector('.items');
         const lists = [
             {
                 id: 1,
@@ -103,8 +112,55 @@
                 name: 'Название новости 5',
                 description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id explicabo quis asperiores fugiat quae sint doloremque qui atque vero illum iure nostrum nihil reprehenderit, blanditiis facilis magnam magni. Dicta, quidem.'
             }
-        ]
+        ];
 
+        // Используем createElement
+        lists.forEach((item) => {
+            const newItem = document.createElement('div');
+            newItem.className = 'item';
+
+            const bg = document.createElement('div');
+            bg.className = 'item__bg';
+
+            const body = document.createElement('div');
+            body.className = 'item__body';
+
+            const name = document.createElement('h2');
+            name.className = 'item__name';
+            name.textContent = item.name;
+
+            const content = document.createElement('p');
+            content.className = 'item__content';
+            content.textContent = item.description;
+
+            const footer = document.createElement('div');
+            footer.className = 'item__footer';
+            footer.textContent = 'Read More';
+
+            body.appendChild(name);
+            body.appendChild(content);
+            body.appendChild(footer);
+
+            newItem.appendChild(bg);
+            newItem.appendChild(body);
+
+            itemsContainer.appendChild(newItem);
+        });
+
+        // Используем insertAdjacentHTML
+        const itemsHTML = lists.map((item) => `
+        <div class="item">
+            <div class="item__bg"></div>
+            <div class="item__body">
+                <h2 class="item__name">${item.name}</h2>
+                <p class="item__content">${item.description}</p>
+                <div class="item__footer">Read More</div>
+            </div>
+        </div>
+    `).join('');
+
+        itemsContainer.insertAdjacentHTML('beforeend', itemsHTML);
     </script>
 </body>
+
 </html>
