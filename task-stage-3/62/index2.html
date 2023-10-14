@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 62.2</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .grid{
+
+        .grid {
             display: flex;
             gap: 20px;
             align-items: center;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -40,7 +47,23 @@
 
     <script>
 
+        function saveNameInLocalStorageAndDisplay() {
+            const name = document.querySelector('.js-input').value;
+            const userData = { name: name };
+
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            document.querySelector('.js-name').textContent = name;
+        }
+        document.querySelector('.js-button').addEventListener('click', saveNameInLocalStorageAndDisplay);
+
+        const userDataJSON = localStorage.getItem('userData');
+        if (userDataJSON) {
+            const userData = JSON.parse(userDataJSON);
+            document.querySelector('.js-name').textContent = userData.name;
+        }
 
     </script>
 </body>
+
 </html>
