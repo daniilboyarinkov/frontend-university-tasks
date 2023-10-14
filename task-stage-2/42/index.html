@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 42</title>
 </head>
+
 <body>
     <script>
         const listUsers = [
@@ -25,22 +27,29 @@
             },
         ];
 
-        const objectItem = '';
+        const objectItem = listUsers[0];
 
         function changeObjectMutate(object) {
-
+            object.firstName = 'Эдуард';
         }
 
         function changeObjectImmutable(object) {
-
+            return {
+                ...object,
+                firstName: 'Эдуард',
+            };
         }
 
-        console.log(changeObjectMutate(objectItem))
-        // console.log(changeObjectImmutable(objectItem))
+        changeObjectMutate(objectItem);
+        console.log(objectItem);
+        console.log(listUsers);
 
-        console.log(objectItem)
-        console.log(listUsers)
+        const newObjectItem = changeObjectImmutable(objectItem);
+        console.log(newObjectItem);
+        console.log(objectItem);
+        console.log(listUsers);
 
     </script>
 </body>
+
 </html>
