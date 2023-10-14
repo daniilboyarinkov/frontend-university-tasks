@@ -1,49 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 49</title>
     <style>
-        body{
+        body {
             font-size: 18px;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .highlight{
+
+        .highlight {
             padding: 10px;
             background-color: black;
             color: white;
         }
-        .text-secondary{
+
+        .text-secondary {
             color: red;
             font-family: monospace;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <article class="article">
 
             <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius alias vitae dicta tempora, <span>minus rerum laudantium magni</span> reprehenderit eum perferendis! Molestias cupiditate ratione fugiat sapiente.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius
+                    alias vitae dicta tempora, <span>minus rerum laudantium magni</span> reprehenderit eum perferendis!
+                    Molestias cupiditate ratione fugiat sapiente.</p>
             </div>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius alias vitae dicta tempora, minus rerum laudantium magni reprehenderit <span>eum perferendis</span>! Molestias cupiditate ratione fugiat sapiente.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius
+                alias vitae dicta tempora, minus rerum laudantium magni reprehenderit <span>eum perferendis</span>!
+                Molestias cupiditate ratione fugiat sapiente.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius alias vitae dicta tempora, minus rerum laudantium magni reprehenderit eum perferendis! Molestias cupiditate ratione fugiat sapiente.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius
+                alias vitae dicta tempora, minus rerum laudantium magni reprehenderit eum perferendis! Molestias
+                cupiditate ratione fugiat sapiente.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius alias vitae dicta tempora, <span>minus rerum laudantium magni reprehenderit</span> eum perferendis! Molestias cupiditate ratione fugiat sapiente.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit commodi, adipisci ex tenetur eius
+                alias vitae dicta tempora, <span>minus rerum laudantium magni reprehenderit</span> eum perferendis!
+                Molestias cupiditate ratione fugiat sapiente.</p>
 
-          </article>
+        </article>
     </div>
 
     <script>
+        const article = document.querySelector('.article');
+
+        if (article) {
+            const paragraphs = article.querySelectorAll('p');
+
+            const div = article.querySelector('div');
+            if (div) {
+                div.classList.add('highlight');
+            }
+
+            paragraphs.forEach(paragraph => {
+                const span = paragraph.querySelector('span');
+
+                if (span) {
+                    span.classList.add('text-secondary');
+                }
+            });
+        } else {
+            console.log('Элемент article не найден.');
+        }
 
     </script>
 </body>
+
 </html>
