@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 51</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
         }
-        .container{
+
+        .container {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 24px;
@@ -23,40 +26,46 @@
             margin-bottom: 2rem;
         }
 
-        .items{
+        .items {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
         }
-        .item{
+
+        .item {
             display: flex;
             flex-direction: column;
             border: 1px solid black;
         }
-        .item__name{
+
+        .item__name {
             margin-bottom: 10px;
             font-size: 18px;
         }
-        .item__content{
+
+        .item__content {
             margin-bottom: 10px;
             font-size: 14px;
         }
-        .item__footer{
+
+        .item__footer {
             background-color: black;
             color: white;
             padding: 5px;
             text-align: center;
         }
-        .item__bg{
+
+        .item__bg {
             height: 150px;
             background-color: black;
         }
-        .item__body{
+
+        .item__body {
             padding: 10px;
         }
-
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -69,7 +78,9 @@
                 <div class="item__bg"></div>
                 <div class="item__body">
                     <h2 class="item__name">Title 1</h2>
-                    <p class="item__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat.</p>
+                    <p class="item__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet
+                        laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus
+                        nihil quibusdam ea debitis sunt eos placeat.</p>
                     <div class="item__footer">Read More</div>
                 </div>
             </div>
@@ -79,15 +90,56 @@
     </div>
 
     <script>
-        const wrappers = document.querySelector('.items')
-
         document.querySelector('.js-button-1').addEventListener('click', () => {
+            const newItem = document.createElement('div');
+            newItem.className = 'item';
 
-        })
+            const bg = document.createElement('div');
+            bg.className = 'item__bg';
+
+            const body = document.createElement('div');
+            body.className = 'item__body';
+
+            const name = document.createElement('h2');
+            name.className = 'item__name';
+            name.textContent = 'Title 2';
+
+            const content = document.createElement('p');
+            content.className = 'item__content';
+            content.textContent = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit...';
+
+            const footer = document.createElement('div');
+            footer.className = 'item__footer';
+            footer.textContent = 'Read More';
+
+            body.appendChild(name);
+            body.appendChild(content);
+            body.appendChild(footer);
+
+            newItem.appendChild(bg);
+            newItem.appendChild(body);
+
+            const items = document.querySelector('.items');
+            items.appendChild(newItem);
+        });
 
         document.querySelector('.js-button-2').addEventListener('click', () => {
+            const newItemHTML = `
+        <div class="item">
+            <div class="item__bg"></div>
+            <div class="item__body">
+                <h2 class="item__name">Title 2</h2>
+                <p class="item__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+                <div class="item__footer">Read More</div>
+            </div>
+        </div>
+    `;
 
-        })
+            const items = document.querySelector('.items');
+            items.insertAdjacentHTML('beforeend', newItemHTML);
+        });
+
     </script>
 </body>
+
 </html>
