@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 53</title>
     <style>
-        .container{
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 24px;
@@ -20,13 +22,38 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <button class="button" type="button"> <span>А</span> Нажми меня  <span>Я</span> </button>
+        <button class="button" type="button"> <span>А</span> Нажми меня <span>Я</span> </button>
     </div>
 
     <script>
+        const button = document.querySelector('.button');
 
+        const handleClick = (event) => {
+            const currentElement = event.currentTarget;
+
+            console.log('className:', currentElement.className);
+            console.log('textContent:', currentElement.textContent);
+            console.log('innerHTML:', currentElement.innerHTML);
+            console.log('nodeName:', currentElement.nodeName);
+
+            console.log('previousElementSibling:', currentElement.previousElementSibling);
+            console.log('previousSibling:', currentElement.previousSibling);
+            console.log('nextSibling:', currentElement.nextSibling);
+            console.log('nextElementSibling:', currentElement.nextElementSibling);
+            console.log('firstChild:', currentElement.firstChild);
+            console.log('firstElementChild:', currentElement.firstElementChild);
+            console.log('lastChild:', currentElement.lastChild);
+            console.log('lastElementChild:', currentElement.lastElementChild);
+            console.log('parentElement:', currentElement.parentElement);
+            console.log('childNodes:', currentElement.childNodes);
+            console.log('children:', currentElement.children);
+        };
+
+        button.addEventListener('click', handleClick);
     </script>
 </body>
+
 </html>
