@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 47</title>
 </head>
+
 <body>
     <div id="by-id">Поиск по ID</div>
     <div class="by-class">Поиск по классу 1</div>
@@ -12,7 +14,24 @@
     <article>Поиск по тегу</article>
 
     <script>
+        var elementById = document.getElementById('by-id');
+        console.log('getElementById:', elementById);
+
+        var elementsByClass = document.getElementsByClassName('by-class');
+        console.log('getElementsByClassName:', elementsByClass);
+
+        var elementsByTag = document.getElementsByTagName('article');
+        console.log('getElementsByTagName:', elementsByTag);
+
+        var elementsByQuerySelectorId = document.querySelector('#by-id');
+        var elementsByQuerySelectorClass = document.querySelector('.by-class');
+        var elementsByQuerySelectorTag = document.querySelector('article');
+        console.log('querySelector:', elementsByQuerySelectorId, elementsByQuerySelectorClass, elementsByQuerySelectorTag);
+
+        var elementsByQuerySelectorAll = document.querySelectorAll('#by-id, .by-class, article');
+        console.log('querySelectorAll:', elementsByQuerySelectorAll);
 
     </script>
 </body>
+
 </html>
