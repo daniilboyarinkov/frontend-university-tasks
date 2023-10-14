@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 40</title>
 </head>
+
 <body>
     <script>
-
-        const info = () => {
-
+        const info = ({ firstName, lastName, age = 18 }) => {
+            console.log(`Меня зовут ${firstName} ${lastName}`);
+            console.log(`Мне ${age} лет`);
         }
 
         const obj = {
@@ -23,8 +25,11 @@
 
         info(obj);
         console.log('----');
-        info({firstName: name, lastName: last, age});
+        info({ firstName: name, lastName: last, age });
 
+        const { firstName: name1, lastName: last1 } = obj;
+        console.log(name1, last1)
     </script>
 </body>
+
 </html>
