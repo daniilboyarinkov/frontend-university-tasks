@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 56</title>
     <style>
-        body{
+        body {
             font-size: 20px;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .tasks li{
+
+        .tasks li {
             padding: 10px 3px;
             cursor: pointer;
             background-color: transparent;
             transition: background-color 200ms cubic-bezier(0.215, 0.610, 0.355, 1);
         }
-        .tasks li:hover{
+
+        .tasks li:hover {
             background-color: #e4e4e4;
         }
-        .complete{
+
+        .complete {
             text-decoration: line-through;
             color: #03A9F4;
         }
-        .text{
+
+        .text {
             font-size: 16px;
             background: red;
             color: white;
@@ -35,6 +41,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div>
@@ -52,6 +59,19 @@
 
     <script>
         let textSize = 16;
+
+        const listItems = document.querySelectorAll('.tasks li');
+
+        listItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                item.classList.toggle('complete');
+
+                const textElement = document.querySelector('.text');
+                textSize += 2;
+                textElement.style.fontSize = textSize + 'px';
+            });
+        });
     </script>
 </body>
+
 </html>
