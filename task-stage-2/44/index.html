@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 44</title>
 </head>
+
 <body>
     <script>
         const fructs = ['Банан', 'Арбуз', 'Яблоко', 'Виноград', 'Груша'];
 
-        console.log(fructs)
+        // Удаление "Яблоко" из массива
+        const indexToBeRemoved = fructs.indexOf('Яблоко');
+        if (indexToBeRemoved !== -1) {
+            fructs.splice(indexToBeRemoved, 1);
+        }
+
+        // Удаление первого элемента из массива
+        fructs.shift();
+
+        // Удаление последнего элемента из массива
+        fructs.pop();
+
+        console.log(fructs);
     </script>
 </body>
+
 </html>
